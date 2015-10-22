@@ -21,14 +21,14 @@ public class TeacherPool implements ITeacherPool {
 
     final public ITeacher GetTeacher(String teacherToBeFound)
     {
-        ITeacher teacherfound = new Teacher();
+        ITeacher teacherFound = new Teacher();
 
         for (ITeacher teacher : availableTeachers) {
             if (teacher.getName().equals(teacherToBeFound)) {
-                teacherfound = teacher;
+                teacherFound = teacher;
             }
         }
 
-        return teacherfound;
+        return teacherFound;
     }
 }

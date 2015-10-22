@@ -6,4 +6,6 @@ package com.cs;
 @SuppressWarnings("ALL")
 public interface ITeacher {
     String getName();
+
+    ISchedule getSchedule();
 }
