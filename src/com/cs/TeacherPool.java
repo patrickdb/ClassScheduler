@@ -1,22 +1,34 @@
 package com.cs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by 885982 on 22-10-2015.
  */
-public class TeacherPool {
+public class TeacherPool implements ITeacherPool {
 
-    Teacher teacher;
+    private final List<ITeacher> availableTeachers = new ArrayList<ITeacher>();
 
-    public void add(Teacher newTeacher) {
-        teacher = newTeacher;
+    final public void add(ITeacher newTeacher) {
+
+        availableTeachers.add(newTeacher);
     }
 
-    public int GetNumberOfTeachers() {
-        return 1;
+    final public int GetNumberOfTeachers() {
+        return availableTeachers.size();
     }
 
-    public Teacher GetTeacher(String teacherToBeFound)
+    final public ITeacher GetTeacher(String teacherToBeFound)
     {
-        return teacher;
+        ITeacher teacherfound = new Teacher();
+
+        for (ITeacher teacher : availableTeachers) {
+            if (teacher.getName().equals(teacherToBeFound)) {
+                teacherfound = teacher;
+            }
+        }
+
+        return teacherfound;
     }
 }

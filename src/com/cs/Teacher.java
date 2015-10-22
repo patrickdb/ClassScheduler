@@ -3,11 +3,18 @@ package com.cs;
 /**
  * Created by 885982 on 22-10-2015.
  */
-public class Teacher {
+public class Teacher implements ITeacher {
 
-    String teacherName;
+    private String teacherName = "defaultTeacherName";
 
     public Teacher(String addedName) {
         teacherName = addedName;
+    }
+
+    public Teacher() {
+    }
+
+    public final String getName() {
+        return teacherName;
     }
 }
