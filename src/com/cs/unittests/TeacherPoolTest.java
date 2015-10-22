@@ -25,10 +25,20 @@ public class TeacherPoolTest {
     public void AddingTeacherIncreasesNumberOfTeachersByOne()
     {
         TeacherPool poolOfTeachers = new TeacherPool();
-        Teacher newTeacher = new Teacher();
+        Teacher newTeacher = new Teacher("AddedName");
         poolOfTeachers.add(newTeacher);
         int numberOfTeachersInPool = poolOfTeachers.GetNumberOfTeachers();
 
+        assertTrue(true);
+    }
+
+    @Test
+    public void AddingTeacherResultsInTeacherInPool()
+    {
+        TeacherPool poolOfTeachers = new TeacherPool();
+        Teacher newTeacher = new Teacher("AddedName");
+        poolOfTeachers.add(newTeacher);
+        Teacher foundTeacher = poolOfTeachers.GetTeacher("AddedName");
         assertTrue(true);
     }
 }
